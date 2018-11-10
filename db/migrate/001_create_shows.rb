@@ -1,6 +1,7 @@
 class CreateShows < ActiveRecord
-  create_table :shows
+  
   def changes
+    create_table :shows
     
   end
 end
