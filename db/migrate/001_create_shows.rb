@@ -1,4 +1,4 @@
-class CreateShows < ActiveRecord
+class CreateShows < ActiveRecord::Migration[5.2]
   
   def changes
     create_table :shows do |t|
