@@ -31,7 +31,8 @@ class Show < ActiveRecord::Base
   end
   
   def self.shows_by_alphabetical_order
-    self.where("name = ?", "ORDER BY name")
+    #self.where("name = ?", "ORDER BY name") doesn't work
+    self.order(:name)
   end
   
 end
