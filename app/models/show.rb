@@ -11,4 +11,9 @@ class Show < ActiveRecord::Base
     #binding.pry
   end
   
+  def self.lowest_rating
+    # opposite of self.highest_rating
+    self.minimum(:rating)
+  end
+  
 end
