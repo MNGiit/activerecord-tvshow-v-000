@@ -7,8 +7,8 @@ class Show < ActiveRecord::Base
   
   def self.most_popular_show
     # hint: use the highest_rating method as a helper method.
-    #self.where("rating = ?", self.highest_rating).first
-    self.highest_rating.first
+    #self.highest_rating.first doesn't work
+    self.where("rating = ?", self.highest_rating).first
     #binding.pry
   end
   
@@ -20,6 +20,10 @@ class Show < ActiveRecord::Base
   def self.least_popular_show
     # opposite of self.most_popular_show
     self.where("rating = ?", self.lowest_rating).first
+  end
+  
+  def ratings_sum
+    self.sum(:rating)
   end
   
 end
